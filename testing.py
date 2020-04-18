@@ -10,7 +10,7 @@ pygame.key.set_repeat(10)
 display_width = 800
 display_height = 600
 
-gameDisplay = pygame.display.set_mode((display_width, display_height))
+gameDisplay = pygame.display.set_mode(())
 pygame.display.set_caption('Skeleton Crew')
 
 black = (0, 0, 0)
