@@ -1,5 +1,5 @@
 import pygame
-from Background import Background
+from Office.Background import Background
 from Player import Player
 
 
@@ -20,8 +20,6 @@ clock = pygame.time.Clock()
 crashed = False
 background = Background(display_width, display_height)
 player = Player()
-#background_mask_image = pygame.image.load("Assets/masks/officebackgroundmask.png")
-#background_mask = pygame.mask.from_surface(background_mask_image)
 
 def renderScreen(x, y):
     gameDisplay.blit(background.image, (x, y))
@@ -45,7 +43,7 @@ while not crashed:
                 player.move_right()
             if event.key == pygame.K_LEFT:
                 player.move_left()
-
+    print(pygame.sprite.collide_mask(background, player))
 
     gameDisplay.fill(white)
     renderScreen(x, y)
