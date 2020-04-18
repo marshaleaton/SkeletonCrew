@@ -1,23 +1,31 @@
 import pygame
+from Background import Background
+from Player import Player
+
+
+
 
 pygame.init()
-
+pygame.key.set_repeat(10)
 display_width = 800
 display_height = 600
 
 gameDisplay = pygame.display.set_mode((display_width, display_height))
-pygame.display.set_caption('A bit Racey')
+pygame.display.set_caption('Skeleton Crew')
 
 black = (0, 0, 0)
 white = (255, 255, 255)
 
 clock = pygame.time.Clock()
 crashed = False
-background_image = pygame.image.load('Assets/backgrounds/officeBackground.png')
-background_image = pygame.transform.scale(background_image, (display_width, display_height))
+background = Background(display_width, display_height)
+player = Player()
+#background_mask_image = pygame.image.load("Assets/masks/officebackgroundmask.png")
+#background_mask = pygame.mask.from_surface(background_mask_image)
 
-def car(x, y):
-    gameDisplay.blit(background_image, (x, y))
+def renderScreen(x, y):
+    gameDisplay.blit(background.image, (x, y))
+    gameDisplay.blit(player.image, player.position)
 
 
 x = (display_width * 0.0)
@@ -28,8 +36,19 @@ while not crashed:
         if event.type == pygame.QUIT:
             crashed = True
 
+        elif event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_DOWN:
+                player.move_down()
+            if event.key == pygame.K_UP:
+                player.move_up()
+            if event.key == pygame.K_RIGHT:
+                player.move_right()
+            if event.key == pygame.K_LEFT:
+                player.move_left()
+
+
     gameDisplay.fill(white)
-    car(x, y)
+    renderScreen(x, y)
 
     pygame.display.update()
     clock.tick(60)
