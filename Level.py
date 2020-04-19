@@ -5,11 +5,13 @@ from Office.WaterCooler import WaterCooler
 from Office.Tree import Tree
 from Office.Desk import Desk
 from Office.Background import Background
+from LevelDefinitions import levels
 
 class Level(object):
 
-    def __init__(self):
+    def __init__(self, width, height):
         # Sprites for the level
+        self.level_data = levels
         self.walls = []
         self.water_sources = []
         self.plants = []
@@ -18,11 +20,17 @@ class Level(object):
         self.showStructure = True
         self.player = None
         self.level_number = 0
+        self.max_level = len(self.level_data)
+        self.width = width
+        self.height = height
+        self.level_complete = False
+        self.all_complete = False
 
     # Take a level definition as a python dict
-    def load_level(self, level_definition, display_width, display_height):
+    def load_level(self):
+        level_definition = self.level_data[self.level_number]
         self.background = Background(level_definition.get("background image", "Assets/backgrounds/officeBackground"),
-                                     display_width, display_height)
+                                     self.width, self.height)
         self.player = Player(level_definition.get("player", {}).get("starting position", (0, 0)))
         self.showStructure = level_definition.get("structure", False)
         self.walls = self.create_walls(level_definition.get("walls", []))
@@ -82,6 +90,30 @@ class Level(object):
             if not plant.watered:
                 return False
         return True
+
+    def next_level(self):
+        if self.level_complete:
+            self.level_number += 1
+            if self.level_number > self.max_level:
+                self.all_complete = True
+            else:
+                self.load_level()
+
+    def handle_input(self, key):
+        if key == pygame.K_DOWN:
+            self.player.move_down()
+        if key == pygame.K_UP:
+            self.player.move_up()
+        if key == pygame.K_RIGHT:
+            self.player.move_right()
+        if key == pygame.K_LEFT:
+            self.player.move_left()
+        if key == pygame.K_SPACE:
+            if self.check_for_water():
+                self.player.has_water = True
+            if self.player.has_water:
+                self.water_plant()
+                self.level_complete = self.check_for_completion()
 
 
     def draw_level(self, game_display):
