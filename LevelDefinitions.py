@@ -1,10 +1,34 @@
 levels = [
     {
         "background image": "Assets/backgrounds/level1.png",
-        "structure": False,
+        "structure": True,
         "player": {
             "starting position" : (685,445)
         },
+        "water sources":[
+            {
+                "position": (725,365),
+                "type": "watercooler"
+            }
+        ],
+        "plants":[
+            {"type": "tree",
+             "position": (315, 370)
+            },
+            {"type": "tree",
+             "position": (745, 20)
+            },
+            {"type": "tree",
+             "position": (45, 30)
+            },
+            {"type": "plant",
+             "position": (200, 300)
+            },
+            {"type": "plant",
+             "position": (400, 300)
+            }
+
+        ],
         "walls":[
             {
                 "position": (0,0),
@@ -27,33 +51,23 @@ levels = [
                 "height": 25
             },
             {
-                "position": (275,0),
-                "width": 25,
-                "height": 250
+                "position": (250,0),
+                "width": 75,
+                "height": 100
             },
             {
-                "position": (575,0),
+                "position": (275,200),
                 "width": 25,
-                "height": 250
+                "height": 400
             },
             {
-                "position": (375,350),
-                "width": 25,
-                "height": 250
-            },
-{
-                "position": (0,250),
-                "width": 150,
-                "height": 25
+                "position": (575,275),
+                "width": 200,
+                "height": 75
             },
             {
                 "position": (0,325),
                 "width": 150,
-                "height": 25
-            },
-            {
-                "position": (200 ,250),
-                "width": 200,
                 "height": 25
             },
             {
@@ -62,22 +76,12 @@ levels = [
                 "height": 25
             }
         ],
-        "water sources":[
-            {
-                "position": (300,200),
-                "type": "watercooler"
-            }
-        ],
-        "plants":[
-            {"type": "tree",
-             "position": (500, 300)
-            }
-        ],
+
         "furniture":[
-            {
-                "type": "desk",
-                "position": (100, 100)
-            }
+            #{
+            #    "type": "desk",
+            #    "position": (100, 100)
+            #}
         ]
     },
 {
@@ -155,10 +159,10 @@ levels = [
             }
         ],
         "furniture":[
-            {
-                "type": "desk",
-                "position": (100, 100)
-            }
+            #{
+            #    "type": "desk",
+            #    "position": (100, 100)
+            #}
         ]
     }
 ]

@@ -4,7 +4,7 @@ from Path import base_path
 
 from GameStates import GameState
 
-current_state = GameState.Start
+current_state = GameState.Game#Todo turn back to start
 pygame.init()
 pygame.key.set_repeat(10)
 display_width = 800
@@ -14,6 +14,9 @@ game_display = pygame.display.set_mode((display_width, display_height))
 pygame.display.set_caption('Skeleton Crew')
 level = Level(display_width, display_height-banner_height)
 level.load_level()
+pygame.mixer_music.load(base_path + "Assets/sounds/background.mp3")
+pygame.mixer_music.set_volume(0.1)
+#pygame.mixer_music.play(-1) #TODO turn back on
 
 title_image = pygame.transform.scale(pygame.image.load(base_path+"Assets/backgrounds/titlescreen.png"), (display_width, display_height))
 win_screen_image = pygame.transform.scale(pygame.image.load(base_path+"Assets/backgrounds/winscreen.png"), (display_width, display_height))
@@ -37,6 +40,8 @@ while not crashed:
     elif current_state == GameState.Win:
         game_display.blit(win_screen_image, (0, 0))
     else:
+        if level.level_complete and not level.all_complete:
+            level.next_level()
         if level.all_complete:
             current_state = GameState.Win
         if level.check_for_collisions():

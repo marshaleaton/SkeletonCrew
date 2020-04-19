@@ -8,7 +8,7 @@ class Player(pygame.sprite.Sprite):
     def __init__(self, position):
         # Call the parent class (Sprite) constructor
         pygame.sprite.Sprite.__init__(self)
-        self.has_water = False
+        self.water_level = 0
         # Create an image of the block, and fill it with a color.
         # This could also be an image loaded from the disk.
         self.idle_image = pygame.image.load(base_path + "Assets/images/player.png")

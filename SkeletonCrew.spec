@@ -13,6 +13,13 @@ a = Analysis(['SkeletonCrew.py'],
              ("/Users/ldjam/PycharmProjects/SkeletonCrew/Assets/images/desk.png","Assets/images/"),
              ("/Users/ldjam/PycharmProjects/SkeletonCrew/Assets/images/plant.png","Assets/images/"),
              ("/Users/ldjam/PycharmProjects/SkeletonCrew/Assets/images/player.png","Assets/images/"),
+             ("/Users/ldjam/PycharmProjects/SkeletonCrew/Assets/images/1.png","Assets/images/"),
+             ("/Users/ldjam/PycharmProjects/SkeletonCrew/Assets/images/2.png","Assets/images/")
+             ("/Users/ldjam/PycharmProjects/SkeletonCrew/Assets/images/3.png","Assets/images/")
+             ("/Users/ldjam/PycharmProjects/SkeletonCrew/Assets/images/4.png","Assets/images/")
+             ("/Users/ldjam/PycharmProjects/SkeletonCrew/Assets/images/5.png","Assets/images/")
+             ("/Users/ldjam/PycharmProjects/SkeletonCrew/Assets/images/bottombanner.png","Assets/images/")
+             ("/Users/ldjam/PycharmProjects/SkeletonCrew/Assets/images/waterfull.png","Assets/images/")
              ("/Users/ldjam/PycharmProjects/SkeletonCrew/Assets/images/watercooler.png","Assets/images/")],
              hiddenimports=[],
              hookspath=[],

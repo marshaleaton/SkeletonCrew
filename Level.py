@@ -1,8 +1,10 @@
 import pygame
 from Player import Player
+from Office.Banner import Banner
 from Office.Wall import Wall
 from Office.WaterCooler import WaterCooler
 from Office.Tree import Tree
+from Office.Plant import Plant
 from Office.Desk import Desk
 from Office.Background import Background
 from LevelDefinitions import levels
@@ -11,6 +13,7 @@ class Level(object):
 
     def __init__(self, width, height):
         # Sprites for the level
+        self.max_water_level = 3
         self.level_data = levels
         self.walls = []
         self.water_sources = []
@@ -25,6 +28,7 @@ class Level(object):
         self.height = height
         self.level_complete = False
         self.all_complete = False
+        self.banner = Banner()
 
     # Take a level definition as a python dict
     def load_level(self):
@@ -56,6 +60,8 @@ class Level(object):
         for plant in plant_definitions:
             if plant.get("type", "") == "tree":
                 plant_sprites.append(Tree(plant.get("position", (0, 0))))
+            elif plant.get("type", "") == "plant":
+                plant_sprites.append(Plant(plant.get("position", (0, 0))))
         return plant_sprites
 
     def create_furniture(self, furniture_definitions):
@@ -80,9 +86,10 @@ class Level(object):
     def water_plant(self):
         for plant in self.plants:
             if pygame.sprite.collide_rect(plant, self.player):
-                self.player.has_water = False
-                plant.watered = True
-                return True
+                if not plant.watered:
+                    self.player.water_level -= 1
+                    plant.water()
+                    return True
         return False
 
     def check_for_completion(self):
@@ -93,8 +100,9 @@ class Level(object):
 
     def next_level(self):
         if self.level_complete:
+            self.level_complete = False
             self.level_number += 1
-            if self.level_number > self.max_level:
+            if self.level_number > self.max_level-1:
                 self.all_complete = True
             else:
                 self.load_level()
@@ -110,15 +118,15 @@ class Level(object):
             self.player.move_left()
         if key == pygame.K_SPACE:
             if self.check_for_water():
-                self.player.has_water = True
-            if self.player.has_water:
+                self.player.water_level = self.max_water_level
+            if self.player.water_level > 0:
                 self.water_plant()
                 self.level_complete = self.check_for_completion()
 
 
     def draw_level(self, game_display):
+        self.banner.draw(game_display, self.level_number, self.player.water_level)
         game_display.blit(self.background.image, (0, 0))
-        game_display.blit(self.player.image, self.player.position)
         if self.showStructure:
             for wall in self.walls:
                 wall.draw(game_display)
@@ -126,9 +134,12 @@ class Level(object):
                 plant.draw_rect(game_display)
             for water_source in self.water_sources:
                 water_source.draw_rect(game_display)
+
         for plant in self.plants:
             game_display.blit(plant.image, plant.position)
         for water_source in self.water_sources:
             game_display.blit(water_source.image, water_source.position)
         for furniture in self.furniture:
             game_display.blit(furniture.image, furniture.position)
+        game_display.blit(self.player.image, self.player.position)
+
