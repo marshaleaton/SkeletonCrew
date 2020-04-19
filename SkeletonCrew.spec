@@ -10,17 +10,28 @@ a = Analysis(['SkeletonCrew.py'],
              ("/Users/ldjam/PycharmProjects/SkeletonCrew/Assets/backgrounds/level2.png","Assets/backgrounds/"),
              ("/Users/ldjam/PycharmProjects/SkeletonCrew/Assets/backgrounds/titlescreen.png","Assets/backgrounds/"),
              ("/Users/ldjam/PycharmProjects/SkeletonCrew/Assets/backgrounds/winscreen.png","Assets/backgrounds/"),
+
+             ("/Users/ldjam/PycharmProjects/SkeletonCrew/Assets/sounds/background.mp3","Assets/sounds/"),
+             ("/Users/ldjam/PycharmProjects/SkeletonCrew/Assets/sounds/success.ogg","Assets/sounds/"),
+             ("/Users/ldjam/PycharmProjects/SkeletonCrew/Assets/sounds/watercooler.ogg","Assets/sounds/"),
+
              ("/Users/ldjam/PycharmProjects/SkeletonCrew/Assets/images/desk.png","Assets/images/"),
              ("/Users/ldjam/PycharmProjects/SkeletonCrew/Assets/images/plant.png","Assets/images/"),
              ("/Users/ldjam/PycharmProjects/SkeletonCrew/Assets/images/player.png","Assets/images/"),
              ("/Users/ldjam/PycharmProjects/SkeletonCrew/Assets/images/1.png","Assets/images/"),
-             ("/Users/ldjam/PycharmProjects/SkeletonCrew/Assets/images/2.png","Assets/images/")
-             ("/Users/ldjam/PycharmProjects/SkeletonCrew/Assets/images/3.png","Assets/images/")
-             ("/Users/ldjam/PycharmProjects/SkeletonCrew/Assets/images/4.png","Assets/images/")
-             ("/Users/ldjam/PycharmProjects/SkeletonCrew/Assets/images/5.png","Assets/images/")
-             ("/Users/ldjam/PycharmProjects/SkeletonCrew/Assets/images/bottombanner.png","Assets/images/")
-             ("/Users/ldjam/PycharmProjects/SkeletonCrew/Assets/images/waterfull.png","Assets/images/")
-             ("/Users/ldjam/PycharmProjects/SkeletonCrew/Assets/images/watercooler.png","Assets/images/")],
+             ("/Users/ldjam/PycharmProjects/SkeletonCrew/Assets/images/2.png","Assets/images/"),
+             ("/Users/ldjam/PycharmProjects/SkeletonCrew/Assets/images/3.png","Assets/images/"),
+             ("/Users/ldjam/PycharmProjects/SkeletonCrew/Assets/images/4.png","Assets/images/"),
+             ("/Users/ldjam/PycharmProjects/SkeletonCrew/Assets/images/5.png","Assets/images/"),
+             ("/Users/ldjam/PycharmProjects/SkeletonCrew/Assets/images/bottombanner.png","Assets/images/"),
+             ("/Users/ldjam/PycharmProjects/SkeletonCrew/Assets/images/waterfull.png","Assets/images/"),
+             ("/Users/ldjam/PycharmProjects/SkeletonCrew/Assets/images/watercooler.png","Assets/images/"),
+
+             ("/Users/ldjam/PycharmProjects/SkeletonCrew/Assets/images/plant_dry.png","Assets/images/"),
+             ("/Users/ldjam/PycharmProjects/SkeletonCrew/Assets/images/plant_wet.png","Assets/images/"),
+             ("/Users/ldjam/PycharmProjects/SkeletonCrew/Assets/images/tree_dry.png","Assets/images/"),
+             ("/Users/ldjam/PycharmProjects/SkeletonCrew/Assets/images/tree_wet.png","Assets/images/"),
+             ],
              hiddenimports=[],
              hookspath=[],
              runtime_hooks=[],

@@ -4,7 +4,7 @@ from Path import base_path
 
 from GameStates import GameState
 
-current_state = GameState.Game#Todo turn back to start
+current_state = GameState.Start
 pygame.init()
 pygame.key.set_repeat(10)
 display_width = 800
@@ -16,7 +16,7 @@ level = Level(display_width, display_height-banner_height)
 level.load_level()
 pygame.mixer_music.load(base_path + "Assets/sounds/background.mp3")
 pygame.mixer_music.set_volume(0.1)
-#pygame.mixer_music.play(-1) #TODO turn back on
+pygame.mixer_music.play(-1)
 
 title_image = pygame.transform.scale(pygame.image.load(base_path+"Assets/backgrounds/titlescreen.png"), (display_width, display_height))
 win_screen_image = pygame.transform.scale(pygame.image.load(base_path+"Assets/backgrounds/winscreen.png"), (display_width, display_height))
