@@ -8,6 +8,7 @@ from Office.Plant import Plant
 from Office.Desk import Desk
 from Office.Background import Background
 from LevelDefinitions import levels
+from Path import base_path
 
 class Level(object):
 
@@ -28,6 +29,8 @@ class Level(object):
         self.height = height
         self.level_complete = False
         self.all_complete = False
+        self.water_sound = pygame.mixer.Sound(base_path + "Assets/sounds/watercooler.ogg")
+        self.water_sound.set_volume(.1)
         self.banner = Banner()
 
     # Take a level definition as a python dict
@@ -108,17 +111,18 @@ class Level(object):
                 self.load_level()
 
     def handle_input(self, key):
-        if key == pygame.K_DOWN:
+        if key == pygame.K_DOWN or key == pygame.K_s:
             self.player.move_down()
-        if key == pygame.K_UP:
+        if key == pygame.K_UP or key == pygame.K_w:
             self.player.move_up()
-        if key == pygame.K_RIGHT:
+        if key == pygame.K_RIGHT or key == pygame.K_d:
             self.player.move_right()
-        if key == pygame.K_LEFT:
+        if key == pygame.K_LEFT or key == pygame.K_a:
             self.player.move_left()
         if key == pygame.K_SPACE:
             if self.check_for_water():
                 self.player.water_level = self.max_water_level
+                self.water_sound.play()
             if self.player.water_level > 0:
                 self.water_plant()
                 self.level_complete = self.check_for_completion()

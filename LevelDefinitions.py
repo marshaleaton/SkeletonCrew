@@ -1,89 +1,4 @@
 levels = [
-    {
-        "background image": "Assets/backgrounds/level1.png",
-        "structure": True,
-        "player": {
-            "starting position" : (685,445)
-        },
-        "water sources":[
-            {
-                "position": (725,365),
-                "type": "watercooler"
-            }
-        ],
-        "plants":[
-            {"type": "tree",
-             "position": (315, 370)
-            },
-            {"type": "tree",
-             "position": (745, 20)
-            },
-            {"type": "tree",
-             "position": (45, 30)
-            },
-            {"type": "plant",
-             "position": (200, 300)
-            },
-            {"type": "plant",
-             "position": (400, 300)
-            }
-
-        ],
-        "walls":[
-            {
-                "position": (0,0),
-                "width": 25,
-                "height": 600
-            },
-            {
-                "position": (0,0),
-                "width": 800,
-                "height": 25
-            },
-            {
-                "position": (775,0),
-                "width": 25,
-                "height": 600
-            },
-            {
-                "position": (0,575),
-                "width": 800,
-                "height": 25
-            },
-            {
-                "position": (250,0),
-                "width": 75,
-                "height": 100
-            },
-            {
-                "position": (275,200),
-                "width": 25,
-                "height": 400
-            },
-            {
-                "position": (575,275),
-                "width": 200,
-                "height": 75
-            },
-            {
-                "position": (0,325),
-                "width": 150,
-                "height": 25
-            },
-            {
-                "position": (250,325),
-                "width": 150,
-                "height": 25
-            }
-        ],
-
-        "furniture":[
-            #{
-            #    "type": "desk",
-            #    "position": (100, 100)
-            #}
-        ]
-    },
 {
         "background image": "Assets/backgrounds/level2.png",
         "structure": False,
@@ -164,5 +79,91 @@ levels = [
             #    "position": (100, 100)
             #}
         ]
+    },
+{
+        "background image": "Assets/backgrounds/level1.png",
+        "structure": False,
+        "player": {
+            "starting position" : (685,445)
+        },
+        "water sources":[
+            {
+                "position": (725,365),
+                "type": "watercooler"
+            }
+        ],
+        "plants":[
+            {"type": "tree",
+             "position": (315, 370)
+            },
+            {"type": "tree",
+             "position": (745, 20)
+            },
+            {"type": "tree",
+             "position": (45, 30)
+            },
+            {"type": "plant",
+             "position": (215, 65)
+            },
+            {"type": "plant",
+             "position": (125, 420)
+            }
+
+        ],
+        "walls":[
+            {
+                "position": (0,0),
+                "width": 45,
+                "height": 600
+            },
+            {
+                "position": (0,0),
+                "width": 800,
+                "height": 15
+            },
+            {
+                "position": (785,0),
+                "width": 15,
+                "height": 600
+            },
+            {
+                "position": (0,585),
+                "width": 800,
+                "height": 15
+            },
+            {
+                "position": (250,0),
+                "width": 75,
+                "height": 85
+            },
+            {
+                "position": (260,215),
+                "width": 40,
+                "height": 380
+            },
+            {
+                "position": (575,275),
+                "width": 200,
+                "height": 75
+            },
+            {
+                "position": (0,325),
+                "width": 200,
+                "height": 25
+            },
+            {
+                "position": (275,295),
+                "width": 225,
+                "height": 50
+            }
+        ],
+
+        "furniture":[
+            #{
+            #    "type": "desk",
+            #    "position": (100, 100)
+            #}
+        ]
     }
+
 ]
