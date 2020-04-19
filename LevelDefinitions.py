@@ -1,7 +1,7 @@
 levels = [
     {
-        "background image": "Assets/backgrounds/officeBackground.png",
-        "structure": True,
+        "background image": "Assets/backgrounds/level1.png",
+        "structure": False,
         "player": {
             "starting position" : (685,445)
         },

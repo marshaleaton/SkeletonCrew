@@ -94,3 +94,9 @@ class Level(object):
                 plant.draw_rect(game_display)
             for water_source in self.water_sources:
                 water_source.draw_rect(game_display)
+        for plant in self.plants:
+            game_display.blit(plant.image, plant.position)
+        for water_source in self.water_sources:
+            game_display.blit(water_source.image, water_source.position)
+        for furniture in self.furniture:
+            game_display.blit(furniture.image, furniture.position)

@@ -9,12 +9,12 @@ from LevelDefinitions import levels
 pygame.init()
 pygame.key.set_repeat(10)
 display_width = 800
-display_height = 600
-
+display_height = 650
+banner_height = 50
 gameDisplay = pygame.display.set_mode((display_width, display_height))
 pygame.display.set_caption('Skeleton Crew')
 current_level = Level()
-current_level.load_level(levels[0], display_width, display_height)
+current_level.load_level(levels[0], display_width, display_height-banner_height)
 max_level = 0
 black = (0, 0, 0)
 white = (255, 255, 255)
@@ -32,7 +32,7 @@ while not crashed:
                 #Success the game is over
                 pass
             else:
-                current_level.load_level(levels[current_level.level_number], display_width, display_height)
+                current_level.load_level(levels[current_level.level_number], display_width, display_height-banner_height)
         elif event.type == pygame.KEYDOWN:
             if event.key == pygame.K_DOWN:
                 current_level.player.move_down()
