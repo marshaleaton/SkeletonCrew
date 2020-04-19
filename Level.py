@@ -31,6 +31,8 @@ class Level(object):
         self.all_complete = False
         self.water_sound = pygame.mixer.Sound(base_path + "Assets/sounds/watercooler.ogg")
         self.water_sound.set_volume(.1)
+        self.plant_sound = pygame.mixer.Sound(base_path + "Assets/sounds/success.ogg")
+        self.plant_sound.set_volume(.1)
         self.banner = Banner()
 
     # Take a level definition as a python dict
@@ -90,6 +92,7 @@ class Level(object):
         for plant in self.plants:
             if pygame.sprite.collide_rect(plant, self.player):
                 if not plant.watered:
+                    self.plant_sound.play()
                     self.player.water_level -= 1
                     plant.water()
                     return True
