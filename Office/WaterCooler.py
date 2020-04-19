@@ -1,5 +1,5 @@
 import pygame
-
+from Path import base_path
 
 class WaterCooler(object):
 
@@ -10,7 +10,7 @@ class WaterCooler(object):
         pygame.sprite.Sprite.__init__(self)
         self.width = 50
         self.height = 50
-        self.image = pygame.image.load("Assets/images/watercooler.png")
+        self.image = pygame.image.load(base_path + "Assets/images/watercooler.png")
         # Create an image of the block, and fill it with a color.
         # This could also be an image loaded from the disk.
         self.color = (144, 202, 249)

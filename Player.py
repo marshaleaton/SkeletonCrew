@@ -1,5 +1,5 @@
 import pygame
-
+from Path import base_path
 
 class Player(pygame.sprite.Sprite):
 
@@ -11,7 +11,7 @@ class Player(pygame.sprite.Sprite):
         self.has_water = False
         # Create an image of the block, and fill it with a color.
         # This could also be an image loaded from the disk.
-        self.idle_image = pygame.image.load("Assets/images/player.png")
+        self.idle_image = pygame.image.load(base_path + "Assets/images/player.png")
         self.image = self.idle_image
         self.position = position
         self.speed = 5

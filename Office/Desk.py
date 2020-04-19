@@ -1,5 +1,5 @@
 import pygame
-
+from Path import base_path
 
 class Desk(object):
 
@@ -11,7 +11,7 @@ class Desk(object):
         self.width = 50
         self.height = 50
         self.position = position
-        self.image = pygame.image.load("Assets/images/desk.png")
+        self.image = pygame.image.load(base_path+"Assets/images/desk.png")
         # Create an image of the block, and fill it with a color.
         # This could also be an image loaded from the disk.
 
