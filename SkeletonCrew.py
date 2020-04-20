@@ -30,10 +30,14 @@ while not crashed:
         if event.type == pygame.QUIT:
             crashed = True
         elif event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_ESCAPE:
+                pygame.quit()
             if current_state == GameState.Start:
                 current_state = GameState.Game
             elif current_state == GameState.Game:
                 level.handle_input(event.key)
+
+
 
     if current_state == GameState.Start:
         game_display.blit(title_image, (0, 0))

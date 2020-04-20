@@ -132,6 +132,7 @@ class Level(object):
 
 
     def draw_level(self, game_display):
+        self.player.animate()
         self.banner.draw(game_display, self.level_number, self.player.water_level)
         game_display.blit(self.background.image, (0, 0))
         if self.showStructure:
@@ -141,12 +142,11 @@ class Level(object):
                 plant.draw_rect(game_display)
             for water_source in self.water_sources:
                 water_source.draw_rect(game_display)
-
+        for furniture in self.furniture:
+            game_display.blit(furniture.image, furniture.position)
         for plant in self.plants:
             game_display.blit(plant.image, plant.position)
         for water_source in self.water_sources:
             game_display.blit(water_source.image, water_source.position)
-        for furniture in self.furniture:
-            game_display.blit(furniture.image, furniture.position)
         game_display.blit(self.player.image, self.player.position)
 

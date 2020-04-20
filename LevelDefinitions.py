@@ -23,7 +23,7 @@ levels = [
              "position": (45, 30)
              },
             {"type": "plant",
-             "position": (215, 65)
+             "position": (160, 90)
              },
             {"type": "plant",
              "position": (125, 420)
@@ -75,14 +75,19 @@ levels = [
                 "position": (275, 295),
                 "width": 225,
                 "height": 50
+            },
+            {
+                "position": (105, 100),
+                "width": 60,
+                "height": 5
             }
         ],
 
         "furniture": [
-            # {
-            #    "type": "desk",
-            #    "position": (100, 100)
-            # }
+            {
+                "type": "desk",
+                "position": (100, 100)
+            }
         ]
     },
     {
@@ -140,13 +145,17 @@ levels = [
              }
         ],
         "furniture": [
-            # {
-            #    "type": "desk",
-            #    "position": (100, 100)
-            # }
+            {
+                "type": "desk",
+                "position": (100, 100)
+            }
         ],
 
         "walls": [
+            {"position": (105, 110),
+             "width": 60,
+             "height": 5
+             },
             {
                 "position": (0, 0),
                 "width": 25,
